@@ -1,0 +1,145 @@
+/* Cookie Consent Popup Styles */
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(22, 33, 62, 0.95);
+    color: white;
+    z-index: 9999;
+    padding: 20px;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+}
+
+.cookie-consent.show {
+    transform: translateY(0);
+}
+
+.cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.cookie-content p {
+    flex: 1;
+    min-width: 300px;
+    margin: 0;
+}
+
+.cookie-content a {
+    color: #e94560;
+    text-decoration: underline;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.cookie-settings-panel {
+    background-color: white;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    display: none;
+}
+
+.cookie-settings-panel.show {
+    display: block;
+}
+
+.cookie-settings-panel h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #16213e;
+}
+
+.cookie-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cookie-option:last-child {
+    border-bottom: none;
+}
+
+.cookie-option label {
+    font-weight: 500;
+}
+
+.cookie-option p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0 0 0;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+    background-color: #e94560;
+}
+
+input:checked + .toggle-slider:before {
+    transform: translateX(26px);
+}
+
+@media (max-width: 768px) {
+    .cookie-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .cookie-buttons {
+        width: 100%;
+    }
+    
+    .cookie-buttons button {
+        flex: 1;
+    }
+}
